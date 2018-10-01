@@ -42,7 +42,6 @@ class RNA:
         :return: True if yes, False otherwise
         """
         return True if self.sequence.endswith('A'*50) else False
-        return all(nucleotide.upper() in 'GCAU' for nucleotide in self.sequence)
 
     @property
     def complimentary_sequence(self):

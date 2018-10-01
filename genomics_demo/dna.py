@@ -40,6 +40,7 @@ class DNA:
                 return i
         raise TypeError("No start codon found")
 
+    @property
     def complimentary_sequence(self):
         return DNA(''.join(complimentary_nucleotides[nt] for nt in self.sequence.upper()))
 

@@ -29,8 +29,8 @@ def test_find_start():
     with pytest.raises(TypeError):
         DNA('GGG').find_first_start_site
 
-    assert DNA('GTC').compliment == DNA('CAG')
-    assert DNA('ATC').compliment == DNA('TAG')
+    assert DNA('GTC').complimentary_sequence == DNA('CAG')
+    assert DNA('ATC').complimentary_sequence == DNA('TAG')
 
 
 def test_find_start_codons():
@@ -47,7 +47,7 @@ def test_transcribe():
 #def test_gc_content_sequence_works():
  #   assert DNA('GC').gc_content > 0.5
 def test_is_gc_rich():
-    assert DNA('GTGT').gc_content() == 0.5
+    assert DNA('GTGT').gc_content == 0.5
  #   length = len(sequence)
   #  c_count = sequence.upper().count('C')
    # g_count = sequence.upp
