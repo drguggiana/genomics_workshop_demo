@@ -23,15 +23,6 @@ class DNA:
     def gc_content(self):
         return sum(nucleotide in 'GC' for nucleotide in self.sequence.upper())/len(self.sequence)
 
-
-
-    def gc_content(self):
-        return sum(nucleotide in 'GC' for nucleotide in self.sequence.upper())/len(self.sequence)
-
-    @property
-    def complimentary_sequence(self):
-        return DNA(''.join(complimentary_nucleotides[nt.upper()] for nt in self.sequence))
-
     @property
     def split_DNA_triplets(self):
         """
@@ -49,7 +40,7 @@ class DNA:
                 return i
         raise TypeError("No start codon found")
 
-    def compliment(self):
+    def complimentary_sequence(self):
         return DNA(''.join(complimentary_nucleotides[nt] for nt in self.sequence.upper()))
 
     def find_start_codons(self):
@@ -70,16 +61,3 @@ class DNA:
         reverse_compliment_rna = reverse_compliment.replace('T', 'U')
         return reverse_compliment_rna
 
-    def gc_content(self):
-        return 0.5
-        #gc_count = self.count("G") + self.count("C")
-        #gc_fraction = float(gc_count) / len(self)
-        #return 100 * gc_fraction
-
-    @property
-    def gc_content(self):
-        return (sum(nucleotide in 'GC' for nucleotide in self.sequence.upper()))/len(self.sequence)
-
-    @property
-    def complimentary_sequence(self):
-        return DNA(''.join(complimentary_nucleotides[nt.upper()] for nt in self.sequence))
